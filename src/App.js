@@ -29,8 +29,10 @@ function App() {
     let month = months[d.getMonth()];
     let year = d.getFullYear();
     let time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
-
+    
     return `${day}, ${month} ${date}, ${year} ${time}`
+    
+    
   }
 
   return (
@@ -69,4 +71,6 @@ function App() {
 }
 
 
+
 export default App;
+
