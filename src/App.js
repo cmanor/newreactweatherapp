@@ -28,8 +28,9 @@ function App() {
     let date = d.getDate();
     let month = months[d.getMonth()];
     let year = d.getFullYear();
+    let time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
 
-    return `${day} ${date} ${month} ${year}`
+    return `${day}, ${month} ${date}, ${year} ${time}`
   }
 
   return (
@@ -45,19 +46,20 @@ function App() {
             onKeyPress={search}
           />
         </div>
+{/* because we put */}
         {(typeof weather.main != "undefined") ? (
         <div>
           <div className="location-box">
-            <div className="location">{weather.name}, {weather.sys.country}</div>
+            <div className="location">{weather.name}</div>
             <div className="date">{dateBuilder(new Date())}</div>
           </div>
           <div className="weather-box">
-            <div className="temp">Temperature:{weather.main.temp}°F</div>
-            <div className="weather">Condition: {weather.weather[0].main}</div>
-            <div className="high">High: {weather.main.temp}°F</div>
-            <div className="low">Low: {weather.main.temp}°F</div>
-            <div className="feels">{weather.main.temp}°F</div>
-            <div className="humidity">{weather.main.temp}°F</div>
+            <div className="temp">Temperature: {weather.main.temp}°F</div>
+            <div className="weather">Conditions: {weather.weather[0].main}</div>
+            <div className="high">High: {weather.main.temp_max}°F</div>
+            <div className="low">Low: {weather.main.temp_min}°F</div>
+            <div className="feels"> Feels Like: {weather.main.feels_like}°F</div>
+            <div className="humidity">Humidity: {weather.main.humidity}°F</div>
           </div>
         </div>
         ) : ('')}
