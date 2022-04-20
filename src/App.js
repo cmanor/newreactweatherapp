@@ -1,11 +1,26 @@
 import React from 'react';
+const api ={
+key: '856cf893bf4748da5e5e119d50885a54',
+base: 'https://api.openweathermap.org/data/2.5/'
+}
 
-
+// rest of api key - 'weather?lat={lat}&lon={lon}&appid={API key}&lang={lang}'
 
 function App() {
+  
+
+
+
   return (
-    <div className="App">
-      hello
+    <div className="app">
+      <main>
+        <div className='searchBox'>
+          <input type='text'
+            className='searchBar'
+            placeholder= 'search'
+          /> 
+          </div>
+      </main>
     </div>
   );
 }
