@@ -7,7 +7,7 @@ body{
   font-family: ;
 }
 .app{
-  background-color: blue;
+  background-color: white;
 }
 main{
   min-height: 100vh;
@@ -35,5 +35,46 @@ main{
   transition: 0.1s ease ;
 }
 .search-box .search-bar:focus {
+  background-color: green;
+}
+.location-box{
+  color: ;
+  font-size: ;
+  font-weight: ;
+  text-align: ;
+  text-shadow: ;
+}
+.location-box .date{
+  color: ;
+  font-size: ;
+  font-weight: ;
+  font-style: ;
+  text-align: ;
+  text-shadow: ;
+}
+.weather-box{
+  text-align: ;
+}
+.weather-box .temp{
+  position: ;
+  display: ;
+  margin: ;
   background-color: ;
+  border-radius: ;
+
+  padding: ;
+
+  color: ;
+  font-size: ;
+  font-weight: ;
+
+  text-shadow: ;
+  text-align: ;
+  box-shadow: ;
+}
+.weather-box .weather{
+  color: white;
+  font-size: ;
+  font-weight: ;
+  text-shadow: ;
 }
