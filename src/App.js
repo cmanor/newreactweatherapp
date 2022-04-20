@@ -55,11 +55,11 @@ function App() {
           </div>
           <div className="weather-box">
             <div className="temp">Temperature: {weather.main.temp}°F</div>
-            <div className="weather">Conditions: {weather.weather[0].main}</div>
             <div className="high">High: {weather.main.temp_max}°F</div>
             <div className="low">Low: {weather.main.temp_min}°F</div>
             <div className="feels"> Feels Like: {weather.main.feels_like}°F</div>
-            <div className="humidity">Humidity: {weather.main.humidity}°F</div>
+            <div className="humidity">Humidity: {weather.main.humidity}%</div>
+            <div className="weather">Conditions: {weather.weather[0].main}</div>
           </div>
         </div>
         ) : ('')}
