@@ -29,11 +29,29 @@ function App() {
     let month = months[d.getMonth()];
     let year = d.getFullYear();
     let time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
-    
+
+
     return `${day}, ${month} ${date}, ${year} ${time}`
     
     
   }
+
+  const dateBuilder2 = (d) => {
+    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    let day = days[d.getDay()];
+    let date = d.getDate();
+    let month = months[d.getMonth()];
+    let year = d.getFullYear();
+    let time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+
+
+    return `${d.toLocaleString()}`
+    
+    
+  }
+
 
   return (
     <div>
@@ -54,6 +72,7 @@ function App() {
           <div className="location-box">
             <div className="location">{weather.name}</div>
             <div className="date">{dateBuilder(new Date())}</div>
+            <div className="date">{dateBuilder2(new Date(`${weather.dt}*1000`))}</div>
           </div>
           <div className="weather-box">
             <div className="temp">Temperature: {weather.main.temp}°F</div>
