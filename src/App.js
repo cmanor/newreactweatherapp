@@ -30,29 +30,25 @@ function App() {
     let year = d.getFullYear();
     let time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
 
-
     return `${day}, ${month} ${date}, ${year} ${time}`
-    
-    
   }
 
   const dateBuilder2 = (d) => {
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-    let day = days[d.getDay()];
-    let date = d.getDate();
-    let month = months[d.getMonth()];
-    let year = d.getFullYear();
-    let time = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
-
-
-    return `${d.toLocaleString()}`
-    console.log(weather.dt)
+    let unix_timestamp = 1549312452
+    // Create a new JavaScript Date object based on the timestamp
+    // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+    let date = new Date(unix_timestamp * 1000);
+    // Hours part from the timestamp
+    let hours = date.getHours();
+    // Minutes part from the timestamp
+    let minutes = "0" + date.getMinutes();
+    // Seconds part from the timestamp
+    let seconds = "0" + date.getSeconds();
     
-    
+    // Will display time in 10:30:23 format
+    let formattedTime = hours + ':' + minutes.substring(-2) + ':' + seconds.substring(-2);
+    return formattedTime;
   }
-
 
   return (
     <div>
@@ -73,8 +69,6 @@ function App() {
           <div className="location-box">
             <div className="location">{weather.name}</div>
             <div className="date">{dateBuilder(new Date())}</div>
-            <div className="date">{dateBuilder2(new Date(`${weather.dt}*1000`))}</div>
-            <div className="location">{weather.dt}</div>
           </div>
           <div className="weather-box">
             <div className="temp">Temperature: {weather.main.temp}°F</div>
