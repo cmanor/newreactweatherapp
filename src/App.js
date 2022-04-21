@@ -48,6 +48,7 @@ function App() {
 
 
     return `${d.toLocaleString()}`
+    console.log(weather.dt)
     
     
   }
@@ -73,6 +74,7 @@ function App() {
             <div className="location">{weather.name}</div>
             <div className="date">{dateBuilder(new Date())}</div>
             <div className="date">{dateBuilder2(new Date(`${weather.dt}*1000`))}</div>
+            <div className="location">{weather.dt}</div>
           </div>
           <div className="weather-box">
             <div className="temp">Temperature: {weather.main.temp}°F</div>
